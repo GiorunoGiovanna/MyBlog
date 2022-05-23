@@ -1,0 +1,13 @@
+#title {
+    overflow: hidden;
+    background-image: url('../img/background.jpg');
+    background-attachment: fixed;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    overflow: hidden;
+}

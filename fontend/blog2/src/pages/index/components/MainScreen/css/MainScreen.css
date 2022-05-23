@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+h1 {
+    color: white
+}
+
+.wrap {
+    height: 100vh;
+    /* background: url(img/bg.jpg) center no-repeat; */
+    background-size: cover;
+}
+
+.nav {
+    /* width: 100%; */
+    /*    width: 280px;*/
+    /* margin-right: 180px; */
+    margin: 10px;
+    height: 98vh;
+    background: rgba(0, 0, 0, 0.777);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.screen {
+    width: 98%;
+    height: 98%;
+    background-color: slategray;
+    border-radius: 15px;
+}

@@ -1,0 +1,38 @@
+.main {
+    width: 500px;
+    height: 400px;
+    margin: auto;
+    margin-top: 20%;
+    /* background-color: pink; */
+}
+
+.tips {
+    white-space: nowrap;
+    /*规定当文本溢出时，显示省略符号来代表被修剪的文本*/
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.tips ::v-deep(.ant-alert-content>.ant-alert-message) {
+    position: relative;
+    width: fit-content;
+    animation: move 30s linear infinite;
+    padding-left: 70px;
+}
+
+.tips ::v-deep(.ant-alert-content>.ant-alert-message)::after {
+    position: absolute;
+    right: 100%;
+    content: attr(textContent);
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(160%);
+    }
+
+    100% {
+        /*将字幕完全隐藏*/
+        transform: translateX(-120%);
+    }
+}
