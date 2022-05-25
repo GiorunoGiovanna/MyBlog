@@ -16,3 +16,31 @@ exports.updateMyBlog = (req, res) => {
         }
     )
 }
+
+//查询所有博客的处理函数
+exports.searchAll = (req, res) => {
+    const { page, size } = req.query
+    // res.cc(req.query, 200)
+    //定义sql语句，查询所有博客
+    const sqlStr = 'select * from blog'
+    db.query(sqlStr, (err, results) => {
+        if (err) {
+            return res.cc(err)
+        }
+        return res.cc(results.slice((page - 1) * size, page * size), 200)
+    })
+}
+
+
+//按名称模糊查询的处理函数
+exports.search = (req, res) => {
+    const { text, page, size } = req.query
+    //定义sql语句，查询按照查询规则模糊查询
+    const sqlStr = 'select * from blog where name like ?'
+    db.query(sqlStr, `%${text}%`, (err, results) => {
+        if (err) {
+            return res.cc(err)
+        }
+        return res.cc(results.slice((page - 1) * size, page * size), 200)
+    })
+}
