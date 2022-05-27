@@ -20,7 +20,7 @@
       <div class="title">
         <p>Menu</p>
       </div>
-      <div class="menu">
+      <div class="menu" :class="isOpen ? 'menu1' : ''">
         <div
           class="item"
           v-for="item of sideBarData[0].items"

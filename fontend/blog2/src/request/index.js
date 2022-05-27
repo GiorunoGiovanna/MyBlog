@@ -3,13 +3,13 @@ import axios from 'axios';
 
 //创建一个axios实例
 const service = axios.create({
-    baseURL: 'http://localhost:3007/api',
+    baseURL: 'http://localhost:3007',
     timeout: 60000,//请求超时时间
     withCredentials: false, // 异步请求携带cookie
     headers: {
         // 设置后端需要的传参类型
-        'Content-Type': 'application/json',
-        'token': 'your token',
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsInVzZXJuYW1lIjoiYWRtaW4iLCJwYXNzd29yZCI6IiIsInVzZXJfcGljIjoiIiwiaWF0IjoxNjUzNjIwNjg3LCJleHAiOjE2NTM2MjQyODd9.ebosBdtl-E8ESf1CMyGLsicNf36kNOWNOO4mTAuvlfI',
         'X-Requested-With': 'XMLHttpRequest',
     },
 })
@@ -18,6 +18,9 @@ const service = axios.create({
 service.interceptors.request.use(
     function (config) {
         // 在发送请求之前做些什么
+        // 如果用户已经登录，则添加token
+        config.headers.Authorization = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsInVzZXJuYW1lIjoiYWRtaW4iLCJwYXNzd29yZCI6IiIsInVzZXJfcGljIjoiIiwiaWF0IjoxNjUzNjIwNjg3LCJleHAiOjE2NTM2MjQyODd9.ebosBdtl-E8ESf1CMyGLsicNf36kNOWNOO4mTAuvlfI'
+        console.log(config)
         return config
     },
     function (error) {
