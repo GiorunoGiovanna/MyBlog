@@ -10,11 +10,11 @@
       </a-breadcrumb-item>
       <a-breadcrumb-item>Application</a-breadcrumb-item>
     </a-breadcrumb> -->
-    <a-layout-content>
-      <div class="innerHtml">
-        <div v-html="html"></div>
-      </div>
-    </a-layout-content>
+    <!-- <a-layout-content> -->
+    <!-- <div class="innerHtml"> -->
+    <v-md-preview :text="html"></v-md-preview>
+    <!-- </div> -->
+    <!-- </a-layout-content> -->
     <!-- 方法一：直接使用插槽，简单，技术含量低 -->
     <!-- <iframe src="https://stoneocean.top" frameborder="0"></iframe> -->
     <!-- 方法二：使用marked,hightlight.js和github-markdown-css自己组合使用博客，还有分类 -->
@@ -40,8 +40,8 @@ export default {
     onMounted(() => {
       getAllBlog({ page: 1, size: 10 }).then(
         (res) => {
-          console.log("陈工", res.message[9].htmlData);
-          html.value = res.message[0].htmlData;
+          console.log("陈工", res.message[2].htmlData);
+          html.value = res.message[6].htmlData;
         },
         (err) => {
           console.log(err);

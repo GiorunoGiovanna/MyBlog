@@ -2,11 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: rgba(255, 255, 255, 0.6);
+    /* color: rgba(255, 255, 255, 0.6); */
 }
 
 h1 {
-    color: white
+    /* color: white */
 }
 
 .wrap {
@@ -33,6 +33,6 @@ h1 {
 .screen {
     width: 98%;
     height: 98%;
-    background-color: slategray;
+    background-color: rgb(255, 255, 255);
     border-radius: 15px;
 }
