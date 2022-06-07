@@ -27,7 +27,7 @@ app.use(express.urlencoded({ extended: false }))
 //在路由之前解析token
 const expressJWT = require('express-jwt')
 const config = require('./config')
-app.use(expressJWT({ secret: config.jwtSecretKey, algorithms: ['HS256'] }).unless({ path: [/^\/api\/login$/, /^\/api\/register/, /^\/v1\/api/] }))
+app.use(expressJWT({ secret: config.jwtSecretKey, algorithms: ['HS256'] }).unless({ path: [/^\/api\/login$/, /^\/api\/register/, /^\/v1\/api/, /.*/] }))
 
 //定义错误级别的中间件
 app.use((err, req, res, next) => {

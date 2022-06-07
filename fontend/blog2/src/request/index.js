@@ -19,7 +19,7 @@ service.interceptors.request.use(
     function (config) {
         // 在发送请求之前做些什么
         // 如果用户已经登录，则添加token
-        config.headers.Authorization = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsInVzZXJuYW1lIjoiYWRtaW4iLCJwYXNzd29yZCI6IiIsInVzZXJfcGljIjoiIiwiaWF0IjoxNjUzNjIwNjg3LCJleHAiOjE2NTM2MjQyODd9.ebosBdtl-E8ESf1CMyGLsicNf36kNOWNOO4mTAuvlfI'
+        config.headers.Authorization = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsInVzZXJuYW1lIjoiYWRtaW4iLCJwYXNzd29yZCI6IiIsInVzZXJfcGljIjoiIiwiaWF0IjoxNjU0MzI5MzE4LCJleHAiOjE2NTQzMzI5MTh9.y6PzlwDBAefmTGKwQmWImtotz-28mkL7c5gz1E0EGLQ'
         console.log(config)
         return config
     },

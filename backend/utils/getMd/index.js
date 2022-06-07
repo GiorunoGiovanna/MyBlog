@@ -37,13 +37,14 @@ exports.transfrom = () => {
                 let content = fs.readFileSync(dirName + '\\' + file, 'utf-8')
                 //去掉头部标签
                 content = content.replace(/^\-{3}.*?\-{3}/s, '')
-                let html = marked.parse(content)
-                //通过cdn添加样式
-                html = `<link href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/monokai-sublime.min.css" rel="stylesheet">
-<script src="https://cdn.bootcss.com/highlight.js/9.18.1/highlight.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown.min.css"/>
-<article class="markdown-body">`+ html + `<script>hljs.initHighlightingOnLoad();</script><style>.markdown-body pre{background-color: #21272c;}</style>
-</article>`
+                let html = content
+                //                 let html = marked.parse(content)
+                //                 //通过cdn添加样式
+                //                 html = `<link href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/monokai-sublime.min.css" rel="stylesheet">
+                // <script src="https://cdn.bootcss.com/highlight.js/9.18.1/highlight.min.js"></script>
+                // <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown.min.css"/>
+                // <article class="markdown-body">`+ html + `<script>hljs.initHighlightingOnLoad();</script><style>.markdown-body pre{background-color: #21272c;}</style>
+                // </article>`
                 //写入同名文件中
                 // fs.writeFileSync(`${dirName + '\\' + 'htmlFlies'}/${file.split('.')[0]}.html`, html)
                 //定义sql语句，查询文件名是否被占用
