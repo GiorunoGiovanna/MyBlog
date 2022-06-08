@@ -11,6 +11,9 @@ router.post('/updateMyBlog', toolHandler.updateMyBlog)
 router.get('/searchAll', toolHandler.searchAll)
 
 //按名称查询博客文件
+router.get('/searchByName', toolHandler.searchByName)
+
+//模糊查询博客文件
 router.get('/search', toolHandler.search)
 
 //将路由对象共享出去

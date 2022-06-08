@@ -17,17 +17,32 @@ exports.updateMyBlog = (req, res) => {
     )
 }
 
-//查询所有博客的处理函数
+//按页查询所有博客的处理函数
 exports.searchAll = (req, res) => {
     const { page, size } = req.query
     // res.cc(req.query, 200)
     //定义sql语句，查询所有博客
-    const sqlStr = 'select * from blog'
+    const sqlStr = 'select name from blog'
     db.query(sqlStr, (err, results) => {
         if (err) {
             return res.cc(err)
         }
         return res.cc(results.slice((page - 1) * size, page * size), 200)
+    })
+}
+
+// 按名称查找具体博客
+exports.searchByName = (req, res) => {
+    const { name } = req.query
+    console.log(name)
+    // res.cc(req.query, 200)
+    //定义sql语句，查询所有博客
+    const sqlStr = 'select * from blog where name = ?'
+    db.query(sqlStr, name, (err, results) => {
+        if (err) {
+            return res.cc(err)
+        }
+        return res.cc(results, 200)
     })
 }
 

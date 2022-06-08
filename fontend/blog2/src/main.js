@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-import { Breadcrumb } from 'ant-design-vue';
+import { Menu } from 'ant-design-vue';
 // import 'ant-design-vue/dist/antd.css';
 
 // 引入markdown解析器
@@ -20,4 +20,4 @@ VMdPreview.use(githubTheme, {
 
 import router from './router'
 
-createApp(App).use(Breadcrumb).use(VMdPreview).use(router).mount('#app')
+createApp(App).use(Menu).use(VMdPreview).use(router).mount('#app')

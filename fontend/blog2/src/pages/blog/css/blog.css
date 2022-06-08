@@ -16,3 +16,11 @@ iframe {
     padding: 24px;
     /* minHeight: 280px; */
 }
+
+.sidebar {
+    float: left;
+}
+
+.markdown {
+    overflow: hidden;
+}
