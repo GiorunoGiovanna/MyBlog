@@ -1,8 +1,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-import { Menu } from 'ant-design-vue';
-// import 'ant-design-vue/dist/antd.css';
+import { List, Pagination } from 'ant-design-vue';
+import 'ant-design-vue/dist/antd.css';
 
 // 引入markdown解析器
 import VMdPreview from '@kangc/v-md-editor/lib/preview';
@@ -20,4 +20,4 @@ VMdPreview.use(githubTheme, {
 
 import router from './router'
 
-createApp(App).use(Menu).use(VMdPreview).use(router).mount('#app')
+createApp(App).use(Pagination).use(List).use(VMdPreview).use(router).mount('#app')

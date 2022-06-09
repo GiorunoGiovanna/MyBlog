@@ -12,13 +12,25 @@ const router = createRouter({
         {
             path: '/index',
             name: 'Index',
-            redirect: '/index/blog',
+            redirect: '/index/blog/blogList',
             component: () => import('../pages/index/index.vue'),
             children: [
                 {
                     path: 'blog',
                     name: 'Blog',
-                    component: () => import('../pages/blog/blog.vue')
+                    component: () => import('../pages/blog/blog.vue'),
+                    children: [
+                        {
+                            path: 'blogList',
+                            name: 'BlogList',
+                            component: () => import('../pages/blog/components/List/BlogList.vue')
+                        },
+                        {
+                            path: 'blogShow',
+                            name: 'BlogShow',
+                            component: () => import('../pages/blog/components/Show/BlogShow.vue')
+                        }
+                    ]
                 },
                 {
                     path: 'toolBox',

@@ -10,14 +10,23 @@ export function getAllBlog(param) {
     })
 }
 
-//按页搜索博客名称
+//按名称搜索具体博客
 export function getBlogByName(param) {
     return service({
-        url: 'blog/search',
+        url: 'blog/searchByName',
         method: 'get',
         params: param,
     })
 }
+
+//按页搜索博客名称
+// export function getBlogByName(param) {
+//     return service({
+//         url: 'blog/search',
+//         method: 'get',
+//         params: param,
+//     })
+// }
 
 //更新博客
 export function updateBlog() {

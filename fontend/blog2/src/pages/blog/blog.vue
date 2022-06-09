@@ -1,21 +1,10 @@
 <template>
   <div class="border">
-    <!-- <a-layout-content> -->
-    <!-- <div class="innerHtml"> -->
     <!-- 方案，第一个页面是展示列表页，点击某一项进入 -->
-    <!-- <div class="sidebar">
-      <a-menu>
-        <a-menu-item>aa </a-menu-item>
-      </a-menu>
-    </div> -->
-    <v-md-preview :text="html" class="markdown"></v-md-preview>
-    <!-- </div> -->
-    <!-- </a-layout-content> -->
+    <router-view></router-view>
     <!-- 方法一：直接使用插槽，简单，技术含量低 -->
     <!-- <iframe src="https://stoneocean.top" frameborder="0"></iframe> -->
     <!-- 方法二：使用marked,hightlight.js和github-markdown-css自己组合使用博客，还有分类 -->
-
-    <!-- todo：使用antd样式组件快速搭建 -->
   </div>
 </template>
 
@@ -24,11 +13,15 @@
 import { onMounted, ref } from "vue";
 import { getAllBlog } from "@/api/blog";
 // import { HomeOutlined, UserOutlined } from "@ant-design/icons-vue";
+import BlogList from "./components/List/BlogList.vue";
+import BlogShow from "./components/Show/BlogShow.vue";
 export default {
-  // components: {
-  //   HomeOutlined,
-  //   UserOutlined,
-  // },
+  components: {
+    BlogList,
+    BlogShow,
+    // HomeOutlined,
+    // UserOutlined,
+  },
   setup() {
     //例子
     let html = ref("");
