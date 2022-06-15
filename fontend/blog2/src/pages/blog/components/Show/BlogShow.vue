@@ -12,7 +12,7 @@ export default {
     // console.log(router.query.name);
     let text = ref("");
     getBlogByName({ name: router.query.name }).then((res) => {
-      console.log(res);
+      // console.log(res);
       text.value = res.message[0].htmlData;
     });
     return {

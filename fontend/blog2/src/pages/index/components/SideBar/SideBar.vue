@@ -93,7 +93,7 @@ export default {
             name: "SideBar",
             icon: "icon-boke",
             openIcon: "",
-            link: "/index/blog",
+            link: "/index/blog/blogList",
           },
           {
             name: "ToolBox",

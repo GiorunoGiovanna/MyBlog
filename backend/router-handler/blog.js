@@ -34,7 +34,7 @@ exports.searchAll = (req, res) => {
 // 按名称查找具体博客
 exports.searchByName = (req, res) => {
     const { name } = req.query
-    console.log(name)
+    // console.log(name)
     // res.cc(req.query, 200)
     //定义sql语句，查询所有博客
     const sqlStr = 'select * from blog where name = ?'

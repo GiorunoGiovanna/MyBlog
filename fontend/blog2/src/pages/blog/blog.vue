@@ -22,25 +22,25 @@ export default {
     // HomeOutlined,
     // UserOutlined,
   },
-  setup() {
-    //例子
-    let html = ref("");
+  // setup() {
+  //   //例子
+  //   let html = ref("");
 
-    onMounted(() => {
-      getAllBlog({ page: 1, size: 10 }).then(
-        (res) => {
-          console.log("陈工", res.message[2].name);
-          html.value = res.message[6].name;
-        },
-        (err) => {
-          console.log(err);
-        }
-      );
-    });
-    return {
-      html,
-    };
-  },
+  //   onMounted(() => {
+  //     getAllBlog({ page: 1, size: 10 }).then(
+  //       (res) => {
+  //         console.log("陈工", res.message[2].name);
+  //         html.value = res.message[6].name;
+  //       },
+  //       (err) => {
+  //         console.log(err);
+  //       }
+  //     );
+  //   });
+  //   return {
+  //     html,
+  //   };
+  // },
 };
 </script>
 

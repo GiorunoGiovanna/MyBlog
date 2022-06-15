@@ -19,14 +19,14 @@ export function getBlogByName(param) {
     })
 }
 
-//按页搜索博客名称
-// export function getBlogByName(param) {
-//     return service({
-//         url: 'blog/search',
-//         method: 'get',
-//         params: param,
-//     })
-// }
+//按名称模糊搜索博客名称
+export function getBlog(param) {
+    return service({
+        url: 'blog/search',
+        method: 'get',
+        params: param,
+    })
+}
 
 //更新博客
 export function updateBlog() {
